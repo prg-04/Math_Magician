@@ -18,7 +18,7 @@
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-# 📖 [TO-DO List] <a name="about-project"></a>
+# 📖 [Math_Magician] <a name="about-project"></a>
 
 > **[Math magicians]** is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:
 
