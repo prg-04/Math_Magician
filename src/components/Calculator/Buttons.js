@@ -1,31 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Calculator() {
-  const buttons = [
-    '0',
-    'AC',
-    '+/-',
-    '%',
-    ' ÷',
-    '7',
-    '8',
-    '9',
-    'x',
-    '4',
-    '5',
-    '6',
-    '-',
-    '1',
-    '2',
-    '3',
-    '+',
-    '0',
-    '.',
-    '=',
-  ];
-
+function Buttons({ buttons }) {
   return (
-    <div className="gridCont">
+    <>
       {buttons.map((button, idx) => {
         if (idx === 0) {
           return (
@@ -55,8 +33,12 @@ function Calculator() {
           </button>
         );
       })}
-    </div>
+    </>
   );
 }
 
-export default Calculator;
+Buttons.propTypes = {
+  buttons: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+export default Buttons;
