@@ -1,10 +1,16 @@
 import './App.css';
 import Calculator from './components/Calculator/Calculator';
+import Navbar from './components/Navbar/Navbar';
+import Quotes from './components/Quotes/Quotes';
 
 function App() {
   return (
     <div className="App">
-      <Calculator />
+      <Navbar />
+      <div className="main">
+        <Quotes />
+        <Calculator />
+      </div>
     </div>
   );
 }
