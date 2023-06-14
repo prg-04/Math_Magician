@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import '../../index.css';
 
 function Navbar() {
   return (
@@ -6,15 +8,15 @@ function Navbar() {
       <h1>Math Magician</h1>
       <nav className="links">
         <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/calculator">Calculator</a>
-          </li>
-          <li>
-            <a href="/quotes">Quotes</a>
-          </li>
+          <NavLink className="link" to="/">
+            Home
+          </NavLink>
+          <NavLink className="link" to="/calculator">
+            Calculator
+          </NavLink>
+          <NavLink className="link" to="/quotes ">
+            Quotes
+          </NavLink>
         </ul>
       </nav>
     </header>

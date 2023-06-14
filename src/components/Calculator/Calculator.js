@@ -37,12 +37,16 @@ function Calculator() {
   ];
 
   return (
-    <div className="gridCont">
-      <Buttons
-        buttons={buttons}
-        handleClick={handleClick}
-        num1={calculatorData.next || calculatorData.total}
-      />
+    <div className="calc">
+      <h2 style={{ margin: '2.5rem 1rem' }}>Let&apos;s do some math...</h2>
+
+      <div className="gridCont">
+        <Buttons
+          buttons={buttons}
+          handleClick={handleClick}
+          num1={calculatorData.next || calculatorData.total}
+        />
+      </div>
     </div>
   );
 }
