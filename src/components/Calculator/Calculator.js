@@ -44,7 +44,11 @@ function Calculator() {
         <Buttons
           buttons={buttons}
           handleClick={handleClick}
-          num1={calculatorData.next || calculatorData.total}
+          num1={
+            calculatorData.next !== null
+              ? calculatorData.next
+              : calculatorData.total
+          }
         />
       </div>
     </div>
