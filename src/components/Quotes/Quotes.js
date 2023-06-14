@@ -1,30 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
-function Quotes() {
-  const [quote, setQuote] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [hasError, setHasError] = useState(false);
-
-  useEffect(() => {
-    const fetchQuote = async () => {
-      const URL = 'https://api.quotable.io/random';
-      setIsLoading(true);
-      setHasError(false);
-
-      try {
-        const response = await fetch(URL);
-        const data = await response.json();
-        setQuote(data.content);
-      } catch (error) {
-        setHasError(true);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchQuote();
-  }, [setHasError, setIsLoading]);
-
+function Quotes({ quote, isLoading, hasError }) {
   if (isLoading) return <div>Loading...</div>;
 
   if (hasError) return <div>Error occurred while fetching the quote.</div>;
@@ -40,5 +16,11 @@ function Quotes() {
     </div>
   );
 }
+
+Quotes.propTypes = {
+  quote: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  hasError: PropTypes.bool.isRequired,
+};
 
 export default Quotes;
