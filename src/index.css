@@ -166,7 +166,7 @@ code {
 .home__hero-intro {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   gap: 1rem;
 }
 
@@ -188,7 +188,7 @@ code {
 .home__hero-calc {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   gap: 1rem;
 }
 
@@ -208,7 +208,7 @@ code {
 .home__hero-quote {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   gap: 1rem;
 }
 

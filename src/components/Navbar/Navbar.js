@@ -14,7 +14,7 @@ function Navbar() {
           <NavLink className="link" to="/calculator">
             Calculator
           </NavLink>
-          <NavLink className="link" to="/quotes ">
+          <NavLink className="link" to="/quotes">
             Quotes
           </NavLink>
         </ul>
