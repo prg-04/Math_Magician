@@ -1,41 +1,42 @@
 import React from 'react';
-import { shallow, configure } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import Calculator from './Calculator';
-import Buttons from './Buttons';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
-configure({ adapter: new Adapter() });
-jest.mock('../logic/Calculate', () => jest.fn());
-// ...
+import Calculator from './Calculator';
+
 describe('Calculator', () => {
-  const buttons = [
-    '0',
-    'AC',
-    '+/-',
-    '%',
-    '÷',
-    '7',
-    '8',
-    '9',
-    'x',
-    '4',
-    '5',
-    '6',
-    '-',
-    '1',
-    '2',
-    '3',
-    '+',
-    '0',
-    '.',
-    '=',
-  ];
-  it('renders the Calculator component correctly', () => {
-    const wrapper = shallow(<Calculator />);
-    expect(wrapper.find('.calc')).toHaveLength(1);
-    expect(wrapper.find('h2').text()).toBe("Let's do some math...");
-    expect(wrapper.find(Buttons)).toHaveLength(1);
-    // Use the `buttons` variable in your test assertions or logic
-    expect(buttons.length).toBe(20);
+  it('renders the Calculator component', () => {
+    const { getByText } = render(<Calculator />);
+
+    const headingElement = getByText("Let's do some math...");
+    expect(headingElement).toBeInTheDocument();
+
+    const buttons = [
+      '0',
+      'AC',
+      '+/-',
+      '%',
+      '÷',
+      '7',
+      '8',
+      '9',
+      'x',
+      '4',
+      '5',
+      '6',
+      '-',
+      '1',
+      '2',
+      '3',
+      '+',
+      '0',
+      '.',
+      '=',
+    ];
+
+    buttons.forEach((button) => {
+      const buttonElement = getByText(button);
+      expect(buttonElement).toBeInTheDocument();
+    });
   });
 });
