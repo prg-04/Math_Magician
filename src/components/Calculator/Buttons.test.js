@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow, configure } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'; // Updated adapter version
 import Buttons from './Buttons';
+
 configure({ adapter: new Adapter() });
 // Rest of your test code...
 describe('Buttons', () => {

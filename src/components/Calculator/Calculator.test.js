@@ -3,6 +3,7 @@ import { shallow, configure } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import Calculator from './Calculator';
 import Buttons from './Buttons';
+
 configure({ adapter: new Adapter() });
 jest.mock('../logic/Calculate', () => jest.fn());
 // ...

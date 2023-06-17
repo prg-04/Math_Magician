@@ -10,7 +10,8 @@ function Buttons({ buttons, handleClick, num1 }) {
             <div
               key={`display-${idx + 1}`}
               style={{ gridColumn: '1/5' }}
-              className="display">
+              className="display"
+            >
               {num1}
             </div>
           );
@@ -21,7 +22,8 @@ function Buttons({ buttons, handleClick, num1 }) {
               onClick={() => handleClick(button)}
               key={`button-${idx + 1}`}
               className="button orange"
-              type="button">
+              type="button"
+            >
               {button}
             </button>
           );
@@ -32,7 +34,8 @@ function Buttons({ buttons, handleClick, num1 }) {
               onClick={() => handleClick(button)}
               key={`button-${idx + 1}`}
               className="button d-spc"
-              type="button">
+              type="button"
+            >
               {button}
             </button>
           );
@@ -43,7 +46,8 @@ function Buttons({ buttons, handleClick, num1 }) {
             onClick={() => handleClick(button)}
             key={`button-${idx + 1}`}
             className="button"
-            type="button">
+            type="button"
+          >
             {button}
           </button>
         );
@@ -56,6 +60,10 @@ Buttons.propTypes = {
   buttons: PropTypes.arrayOf(PropTypes.string).isRequired,
   handleClick: PropTypes.func.isRequired,
   num1: PropTypes.string,
+};
+
+Buttons.defaultProps = {
+  num1: '',
 };
 
 export default Buttons;
