@@ -7,7 +7,11 @@ function Buttons({ buttons, handleClick, num1 }) {
       {buttons.map((button, idx) => {
         if (idx === 0) {
           return (
-            <div key={button} style={{ gridColumn: '1/5' }} className="display">
+            <div
+              key={`display-${idx + 1}`}
+              style={{ gridColumn: '1/5' }}
+              className="display"
+            >
               {num1}
             </div>
           );
@@ -16,7 +20,7 @@ function Buttons({ buttons, handleClick, num1 }) {
           return (
             <button
               onClick={() => handleClick(button)}
-              key={button}
+              key={`button-${idx + 1}`}
               className="button orange"
               type="button"
             >
@@ -28,7 +32,7 @@ function Buttons({ buttons, handleClick, num1 }) {
           return (
             <button
               onClick={() => handleClick(button)}
-              key={button}
+              key={`button-${idx + 1}`}
               className="button d-spc"
               type="button"
             >
@@ -40,7 +44,7 @@ function Buttons({ buttons, handleClick, num1 }) {
         return (
           <button
             onClick={() => handleClick(button)}
-            key={button}
+            key={`button-${idx + 1}`}
             className="button"
             type="button"
           >
@@ -55,7 +59,11 @@ function Buttons({ buttons, handleClick, num1 }) {
 Buttons.propTypes = {
   buttons: PropTypes.arrayOf(PropTypes.string).isRequired,
   handleClick: PropTypes.func.isRequired,
-  num1: PropTypes.string.isRequired,
+  num1: PropTypes.string,
+};
+
+Buttons.defaultProps = {
+  num1: '',
 };
 
 export default Buttons;
